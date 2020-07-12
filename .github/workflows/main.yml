@@ -18,9 +18,10 @@ jobs:
         uses: actions/checkout@master
       
       - name: Deploy to Firebase
-      - run: cd functions
-      - run: npm install
-      - run: npm install -g firebase-tools
-      - run: npm run build
-      - run: cd ..
-      - run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          cd functions
+          npm install
+          npm install -g firebase-tools
+          npm run build
+          cd ..
+          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only functions
