@@ -4,12 +4,13 @@
 
 ### Built with Typescript, Firebase, Postman, Express
 
-There are 3 key RESTful endpoints (check the Postman Collection for more details):
+There are 4 key RESTful endpoints (check the Postman Collection for more details):
 
 ### `setImage`
 ```
 POST
 https://us-central1-gh-img.cloudfunctions.net/setImage
+
 Requires:
 {
     "url": "any valid image URL"
@@ -60,6 +61,18 @@ OR
 HTTP 405 (if incorrect method or missing query)
 ```
 
+
+### `randomEmoji` 
+```
+GET
+https://us-central1-gh-img.cloudfunctions.net/randomEmoji
+
+Returns:
+A random SVG emoji from https://github.com/twitter/twemoji
+
+```
+
+
 ## Setup
 ```
 cd functions
@@ -84,11 +97,3 @@ firebase deploy
 ## Details
 
 https://rushter.com/blog/github-profile-markdown/
-
-
-## In progress
-
-### `getEmoji`
-
-To provide a random emoji in response (using Twitter OSS emojis)!
-

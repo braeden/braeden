@@ -1,32 +1,22 @@
 import * as functions from 'firebase-functions';
 import admin = require('firebase-admin');
-admin.initializeApp();
 const fetch = require('node-fetch')
 const util = require('util');
 const streamPipeline = util.promisify(require('stream').pipeline);
+admin.initializeApp();
+import { emoji } from "./emoji-list";
+
 
 export const randomEmoji = functions.https.onRequest(async (req, res) => {
     res.set('Cache-Control', 'max-age=0, no-cache, no-store, must-revalidate');
-    const s = admin.storage()
-    s.bucket('gs://gh-img.appspot.com').getFiles(
-        {
-            autoPaginate: false,
-            prefix: 'emojis/'
-        },
-        (err, files) => {
-            if (!err && files) {
-                const images = files.filter(file => file.name.includes('.svg'))
-                const target = images[Math.floor(Math.random() * images.length)];
-                if (target) {
-                    res.setHeader('content-type', target?.metadata?.contentType || '')
-                    target.createReadStream().pipe(res);
-                    console.log('Served:', target.name);
-                    return;
-                }
-            }
-        }
-    )
-    res.status(404).end();
+    const target = emoji[Math.floor(Math.random() * emoji.length)];
+    const url = `https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/${target}`
+    const response = await fetch(url);
+    if (response.ok) {
+        res.setHeader('content-type', response.headers.get('content-type') || '');
+        return streamPipeline(response.body, res);
+    }
+    res.status(404).end()
 });
 
 
