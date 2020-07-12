@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "16548051-6f70-4e8b-936f-b960ad20c2bd",
+		"name": "gh-img",
+		"description": "Image click tracker for Github!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/gh-img/us-central1/setImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"gh-img",
+						"us-central1",
+						"setImage"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/gh-img/us-central1/getImage?id=fg2b0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"gh-img",
+						"us-central1",
+						"getImage"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "fg2b0"
+						}
+					]
+				},
+				"description": "This is the URL you place in Github. It forwards the URL you choose and keeps track of the count!"
+			},
+			"response": []
+		},
+		{
+			"name": "getStats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/gh-img/us-central1/getStats?id=fg2b0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"gh-img",
+						"us-central1",
+						"getStats"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "fg2b0"
+						}
+					]
+				},
+				"description": "{\n    \"count\": 1\n}\n\nCounts the number of requests made to getImage with your ID"
+			},
+			"response": []
+		},
+		{
+			"name": "setImage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/gh-img/us-central1/setImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"gh-img",
+						"us-central1",
+						"setImage"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Sets an image given a url via post request"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0c8f6331-9e47-41b4-a10a-92a5752d3eaf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e62df7a3-7a99-49e3-9d92-d67165a3c5a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
