@@ -1,7 +1,10 @@
-###  Hi there 👋
+###  [Hi there](https://braeden.xyz) 👋
 
-<img align="left" width="20" height="20" src="https://us-central1-gh-img.cloudfunctions.net/getImage?id=0agpz">Check me out here: [0x00.dev](https://0x00.dev)
+Enjoy this [random emoji](https://github.com/braeden/braeden/blob/master/GH-IMG.md) -  <img align="center" width="20" height="20" src="https://us-central1-gh-img.cloudfunctions.net/randomEmoji"> <img align="left" width="0" height="0" src="https://us-central1-gh-img.cloudfunctions.net/getImage?id=2nn6u">
+
 <!--
+
+
 **braeden/braeden** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
