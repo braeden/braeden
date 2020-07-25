@@ -1,4 +1,22 @@
-export let emoji = ["1f004",
+addEventListener('fetch', event => {
+    event.respondWith(
+        (async () => {
+            const target = emoji[Math.floor(Math.random() * emoji.length)];
+            const url = `https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/${target}.svg`
+            const image = await fetch(url)
+            const {
+                readable,
+                writable
+            } = new TransformStream()
+            image.body.pipeTo(writable)
+            const r = new Response(readable, image)
+            r.headers.set('Cache-Control', 'max-age=0, no-cache, no-store, must-revalidate')
+            return r
+        })()
+    );
+});
+
+const emoji = ["1f004",
     "1f0cf",
     "1f170",
     "1f171",

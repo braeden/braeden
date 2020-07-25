@@ -6,11 +6,10 @@ const streamPipeline = util.promisify(require('stream').pipeline);
 admin.initializeApp();
 import { emoji } from "./emoji-list";
 
-
 export const randomEmoji = functions.https.onRequest(async (req, res) => {
     res.set('Cache-Control', 'max-age=0, no-cache, no-store, must-revalidate');
     const target = emoji[Math.floor(Math.random() * emoji.length)];
-    const url = `https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/${target}`
+    const url = `https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/${target}.svg`
     const response = await fetch(url);
     if (response.ok) {
         res.setHeader('content-type', response.headers.get('content-type') || '');
