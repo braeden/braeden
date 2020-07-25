@@ -2,14 +2,16 @@
 
 ## You can embed an image and check how many people check out your Github!
 
-### Built with Typescript, Firebase, Postman, Express
+## Built with Typescript, Postman, Express | Hosted by Firebase and Cloudflare Workers
+
+Enjoy this random emoji image: <img align="center" width="30" height="30" src="https://emoji.braedensmith.workers.dev/">!
 
 There are 4 key RESTful endpoints (check the Postman Collection for more details):
 
 ### `setImage`
+https://us-central1-gh-img.cloudfunctions.net/setImage
 ```
 POST
-https://us-central1-gh-img.cloudfunctions.net/setImage
 
 Requires:
 {
@@ -25,9 +27,9 @@ HTTP 405
 ```
 
 ### `getImage` 
+https://us-central1-gh-img.cloudfunctions.net/getImage
 ```
 GET
-https://us-central1-gh-img.cloudfunctions.net/getImage
 
 Requires URL query: id={ID_HERE}
 
@@ -44,9 +46,10 @@ HTTP 500 (if there is an issue with URL)
 
 
 ### `getStats` 
+
+https://us-central1-gh-img.cloudfunctions.net/getStats
 ```
 GET
-https://us-central1-gh-img.cloudfunctions.net/getStats
 
 Requires URL query: id={ID_HERE}
 
@@ -63,13 +66,16 @@ HTTP 405 (if incorrect method or missing query)
 
 
 ### `randomEmoji` 
+https://us-central1-gh-img.cloudfunctions.net/randomEmoji
+
+OR 
+
+https://emoji.braedensmith.workers.dev (faster)
 ```
 GET
-https://us-central1-gh-img.cloudfunctions.net/randomEmoji
 
 Returns:
 A random SVG emoji from https://github.com/twitter/twemoji
-
 ```
 
 
