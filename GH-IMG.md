@@ -4,7 +4,14 @@
 
 ## Built with Typescript, Postman, Express | Hosted by Firebase and Cloudflare Workers
 
+------
+
+### [Here is the blog post I wrote about this project](https://dev.to/braeden/a-micro-api-in-firebase-and-cloudflare-workers-jdn)
+------
+
 Enjoy this random emoji image: <img align="center" width="30" height="30" src="https://emoji.braedensmith.workers.dev/">!
+
+--------
 
 There are 4 key RESTful endpoints (check the Postman Collection for more details):
 
@@ -100,6 +107,6 @@ firebase deploy
 ```
 
 
-## Details
+## Inspiration
 
 https://rushter.com/blog/github-profile-markdown/
