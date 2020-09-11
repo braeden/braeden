@@ -1,4 +1,4 @@
-###  [Hi there](https://braeden.xyz) 👋
+###  [Hi there](https://braeden.dev) 👋
 
 Enjoy this [random](https://dev.to/braeden/a-micro-api-in-firebase-and-cloudflare-workers-jdn) [emoji](https://github.com/braeden/braeden/blob/master/GH-IMG.md) -  <img align="center" width="20" height="20" src="https://emoji.braedensmith.workers.dev">
 
